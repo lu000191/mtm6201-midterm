@@ -1,0 +1,298 @@
+.skip-links{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skip-links a{
+    position: absolute;
+    top: -3em;
+    background-color: black;
+    color:white;
+    padding: .5em 1em;
+    font-weight: bold;
+}
+
+.skip-links a:focus{
+    top: 0;
+}
+
+:root {
+    --primary-color: #ffffff; 
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: #FFF;
+    background: #000;
+}
+
+header {
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+nav li a{ 
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 5px;
+}
+
+nav li:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+    background-color: aquamarine;
+    border-radius: 10px;; 
+    padding: 5px;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.highlight {
+    background-color:rgb(68, 112, 245);
+    border-radius: 10px;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.hilight {
+    position: relative;
+}
+
+.hilight::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 10px;
+    right: 0;
+    bottom: 4px;
+    z-index: -1;
+
+    display: inline-block;
+
+    background: rgb(68, 112, 245);
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    position: absolute;
+    left: 50px;
+    bottom: 110px;
+    text-align: left;
+    z-index: 1;
+    font-size: 150%;
+}
+.hero p {
+    position: absolute;
+    left: 50px;
+    bottom: 60px;
+    text-align: left;
+    z-index: 1;
+}
+.hero .system {
+    position: absolute;
+    left: 50px;
+    bottom: 160px;
+    text-align: left;
+    z-index: 1;
+    font-size: 80%;
+}
+
+.hero ::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.hero .animated-text {
+    background: -webkit-linear-gradient(0deg, rgb(75, 156, 238), rgb(78, 243, 241));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #FFF; }
+    50% { color: var(--primary-color); }
+    100% { color: #FFF; }
+}
+
+.hero::before {
+    content: '';
+    background-color: rgba(255, 255, 0, 0.7); /* i give up, no clue how to add that glowing thing behind milky-way image*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; 
+}
+
+.hero::after {
+    content: '';
+    background-image: url('image/milky-way.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    animation: slowZoom 20s infinite;
+}
+
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.locals {
+    padding: 1rem; 
+}
+
+.locals h3 {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.locals a {
+    background-color:rgb(144, 8, 149);
+    border-radius: 10px;
+}
+
+.learn-more.last{
+    background-color: rgb(68, 112, 245);
+}
+
+.local a :first-child{
+    background-color: rgb(68, 112, 245);
+    border-radius: 10px;
+}
+
+.local a:hover{
+    background-color: aquamarine;
+    color:#000;
+    transform: scale(2);
+    transition: transform 0.3s;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.local {
+    text-align: center;
+}
+
+.local img {
+    max-width: 100%;
+}
+
+.local a {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 2px;
+}
+
+.local a:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 1rem 0;
+    background: #000000;
+    color: #ffffff;
+    border-top: 0.1px solid #484848; 
+}
+
+@media (max-width: 900px) {
+    nav ul {
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .locals h3{
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        font-size: 1rem;
+    }
+    .hero h2 {
+        position: absolute;
+        left: 18%;
+        bottom: 110px;
+        text-align: center;
+        z-index: 1;
+    }
+    .hero p {
+        position: absolute;
+        left: 10%;
+        bottom: 60px;
+        text-align: center;
+        z-index: 1;
+    }
+    .hero .system {
+        position: absolute;
+        left: 35%;
+        bottom: 160px;
+        text-align: center;
+        z-index: 1;
+        font-size: 80%;
+    }
+    .locals h3{
+        text-align: center;
+    }
+}
